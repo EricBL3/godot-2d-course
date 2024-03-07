@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://besmi7deuvi65"
-path="res://.godot/imported/ufoGreen.png-568b588f7fd0fa19ed1760b2807512b2.ctex"
+uid="uid://b03h64emtjhrr"
+path="res://.godot/imported/darkPurple.png-4b368605439df93fec6cdb41a2322d42.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ufoGreen.png"
-dest_files=["res://.godot/imported/ufoGreen.png-568b588f7fd0fa19ed1760b2807512b2.ctex"]
+source_file="res://assets/darkPurple.png"
+dest_files=["res://.godot/imported/darkPurple.png-4b368605439df93fec6cdb41a2322d42.ctex"]
 
 [params]
 

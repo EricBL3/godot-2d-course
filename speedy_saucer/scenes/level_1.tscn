@@ -1,18 +1,54 @@
-[gd_scene load_steps=4 format=3 uid="uid://fjwcvyen3hpy"]
+[gd_scene load_steps=6 format=3 uid="uid://fjwcvyen3hpy"]
 
-[ext_resource type="Script" path="res://scripts/level_1.gd" id="1_5hkro"]
+[ext_resource type="Script" path="res://scripts/level.gd" id="1_5hkro"]
 [ext_resource type="Texture2D" uid="uid://sm3nxguqhkxf" path="res://assets/purple.png" id="1_n4r03"]
 [ext_resource type="PackedScene" uid="uid://dm61a3obbxpub" path="res://scenes/player.tscn" id="2_1iq33"]
+[ext_resource type="PackedScene" uid="uid://blanyr4ottwyv" path="res://scenes/maze.tscn" id="4_omgrj"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_8yvm7"]
+font_size = 32
 
 [node name="Level1" type="Node2D"]
 script = ExtResource("1_5hkro")
 
-[node name="Background" type="TextureRect" parent="."]
+[node name="Graphics" type="Node" parent="."]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Graphics"]
+layer = -10
+
+[node name="Background" type="TextureRect" parent="Graphics/CanvasLayer"]
 z_index = -100
-offset_right = 1152.0
-offset_bottom = 648.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("1_n4r03")
 stretch_mode = 1
 
+[node name="StartLabel" type="Label" parent="Graphics"]
+z_index = -25
+offset_left = 439.0
+offset_top = 130.0
+offset_right = 534.0
+offset_bottom = 175.0
+text = "START"
+label_settings = SubResource("LabelSettings_8yvm7")
+
+[node name="EndLabel" type="Label" parent="Graphics"]
+z_index = -25
+offset_left = 341.0
+offset_top = -351.0
+offset_right = 436.0
+offset_bottom = -306.0
+text = "END"
+label_settings = SubResource("LabelSettings_8yvm7")
+
 [node name="Player" parent="." instance=ExtResource("2_1iq33")]
-position = Vector2(692, 176)
+position = Vector2(499, 235)
+
+[node name="Maze" parent="." instance=ExtResource("4_omgrj")]
+z_index = -50
+position = Vector2(502, 429)
+
+[connection signal="body_exited" from="Maze" to="." method="_on_maze_body_exited"]

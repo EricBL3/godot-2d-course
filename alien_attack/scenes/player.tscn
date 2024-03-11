@@ -8,6 +8,7 @@ radius = 16.0
 height = 92.0
 
 [node name="Player" type="CharacterBody2D"]
+collision_mask = 2
 script = ExtResource("1_h57cm")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -18,3 +19,5 @@ texture = ExtResource("1_djpsk")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(8, -1)
 shape = SubResource("CapsuleShape2D_el2wg")
+
+[node name="RocketContainer" type="Node" parent="."]
